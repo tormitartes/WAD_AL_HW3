@@ -13,12 +13,15 @@
 export default {
   name: 'PostItem',
   props: {
-    post: {
-      type: Object,
+    postId: {
+      type: Number,
       required: true,
     },
   },
   computed: {
+    post() {
+      return this.$store.state.posts.find((p) => p.id === this.postId)
+    },
     formattedDate() {
       return new Date(this.post.createdAt).toLocaleDateString('en-US', {
         year: 'numeric',

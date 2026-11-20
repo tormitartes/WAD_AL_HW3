@@ -7,3 +7,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #f4f4f4;
 }
+
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrapper > main {
+  flex: 1;
+  width: 100%;
+}

@@ -1,6 +1,6 @@
 <template>
   <main class="main-page">
-    <PostItem v-for="post in posts" :key="post.id" :post="post" />
+    <PostItem v-for="post in posts" :key="post.id" :post-id="post.id" />
   </main>
 </template>
 

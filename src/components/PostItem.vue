@@ -46,23 +46,40 @@ export default {
 .post {
   background-color: #e0e0e0;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px 20px;
   margin-bottom: 15px;
 }
 
 .post-meta {
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 14px;
+  margin-bottom: 4px;
+
 }
 
 .post-image {
+  display: block;
   width: 100%;
-  border-radius: 6px;
-  margin-top: 8px;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 600px;
 }
 
 .post-text {
-  margin: 8px 0 0;
+  margin: 12px 0 0;
+}
+button {
+  align-items: center;
+  margin-top: 15px;
+  padding: 5px 15px;
+  background-color: #b2abab;
+  font-size: 14px;
+  border-radius: 100px;
+  border-color: transparent;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #a3a0a0;
 }
 </style>

@@ -43,11 +43,11 @@ export default {
         },
         {
           label: 'Includes at least one uppercase alphabet character',
-          test: (p) => /[A-Ü]/.test(p),
+          test: (p) => /\p{Lu}/u.test(p),
         },
         {
           label: 'Includes at least two lowercase alphabet characters',
-          test: (p) => (p.match(/[a-ü]/g) || []).length >= 2,
+          test: (p) => (p.match(/\p{Ll}/gu) || []).length >= 2,
         },
         {
           label: 'Includes at least one numeric value',
@@ -55,7 +55,7 @@ export default {
         },
         {
           label: 'It should start with an uppercase letter',
-          test: (p) => /^[A-Ü]/.test(p),
+          test: (p) => /^\p{Lu}/u.test(p),
         },
         {
           label: 'It should include the character "_"',

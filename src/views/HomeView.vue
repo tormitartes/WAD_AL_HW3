@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .main-page {
-  max-width: 500px;
+  max-width: 750px;
   margin: 0 auto;
   padding: 20px 10px;
 }

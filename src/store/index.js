@@ -10,7 +10,8 @@ export default createStore({
     "createdAt": "2022-10-22",
     "text": "Just watched a fantastic movie!",
     "image": "/img/shrek_poster.jpg",
-    "imageAlt": "Shrek movie poster"
+    "imageAlt": "Shrek movie poster",
+    "likes": 0
   },
   {
     "id": 2,
@@ -18,7 +19,8 @@ export default createStore({
     "createdAt": "2026-10-21",
     "text": "Anyone knows in which room is the lab today?",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 3,
@@ -26,7 +28,8 @@ export default createStore({
     "createdAt": "1999-01-13",
     "text": "What a wonderful day!",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 4,
@@ -34,7 +37,8 @@ export default createStore({
     "createdAt": "2026-10-03",
     "text": "Visited Norway last year. What an amazing and beautiful country!",
     "image": "/img/norway_mountain.jpg",
-    "imageAlt": "Norway ski resort"
+    "imageAlt": "Norway ski resort",
+    "likes": 0
   },
   {
     "id": 5,
@@ -42,7 +46,8 @@ export default createStore({
     "createdAt": "2025-01-14",
     "text": "How did I get here?",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 6,
@@ -50,7 +55,8 @@ export default createStore({
     "createdAt": "2026-10-24",
     "text": "Finally reached Diamond rank after grinding all weekend!",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 7,
@@ -58,7 +64,8 @@ export default createStore({
     "createdAt": "2026-10-23",
     "text": "Spent 5 hours debugging just to find a missing semicolon.",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 8,
@@ -66,7 +73,8 @@ export default createStore({
     "createdAt": "2026-10-20",
     "text": "My internet disconnected right before the final boss fight.",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 9,
@@ -74,7 +82,8 @@ export default createStore({
     "createdAt": "2026-10-18",
     "text": "Coffee and coding. The perfect combination.",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   },
   {
     "id": 10,
@@ -82,11 +91,26 @@ export default createStore({
     "createdAt": "2026-10-15",
     "text": "Just submitted my homework 2 minutes before the deadline!",
     "image": null,
-    "imageAlt": null
+    "imageAlt": null,
+    "likes": 0
   }
 ],
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    incrementLikes(state, postId) {
+      const post = state.posts.find((p) => p.id ===postId)
+
+      if (post) {
+        post.likes++
+      }
+    },
+
+    resetLikes(state) {
+      state.posts.forEach((post) => {
+        post.likes = 0
+      })
+    },
+  },
   actions: {},
 })

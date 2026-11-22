@@ -6,6 +6,9 @@
     </div>
     <img v-if="post.image" :src="post.image" :alt="post.imageAlt" class="post-image" />
     <p class="post-text">{{ post.text }}</p>
+    <button @click="likePost">
+      👍 {{post.likes}}
+    </button>
   </article>
 </template>
 
@@ -29,6 +32,11 @@ export default {
         day: 'numeric',
         timeZone: 'UTC',
       })
+    },
+  },
+  methods: {
+    likePost() {
+      this.$store.commit('incrementLikes', this.postId)
     },
   },
 }
